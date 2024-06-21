@@ -10,6 +10,7 @@ compile_commands.json
 CTestTestfile.cmake
 CPackConfig.cmake
 CPackSourceConfig.cmake
+*.cmake
 _deps
 mygame
 .cache
