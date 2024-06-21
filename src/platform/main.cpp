@@ -1,12 +1,14 @@
 #include <SFML/Window.hpp>
 
 int main(void) {
-  sf::Window window(sf::VideoMode(sf::Vector2u(800, 600)), "My window");
+  sf::Window window(sf::VideoMode(800, 600), "My window");
 
   while (window.isOpen()) {
-    sf::Event event = window.pollEvent();
-    if (eventClosed)
-      window.close();
+    sf::Event event;
+    while (window.pollEvent(event)) {
+      if (event.type == sf::Event::Closed)
+        window.close();
+    }
   }
 
   return 0;
