@@ -16,9 +16,9 @@ add_subdirectory(thirdparty/SFML)
 
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 
-add_executable("$CMAKE_PROJECT_NAME}")
+add_executable("${CMAKE_PROJECT_NAME}")
 
-set_property(TARGET "$CMAKE_PROJECT_NAME}" PROPERTY CXX_STANDARD 17)
+set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY CXX_STANDARD 17)
 
 if(PRODUCTION_BUILD)
 	# setup the ASSETS_PATH macro to be in the root folder of your exe
@@ -57,4 +57,4 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURC
 #	glad stb_image stb_truetype gl2d raudio imgui safeSave profilerLib enet glui)
 
 #enet not working yet on linux for some reason
-target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE sfml)
+target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE sfml-graphics)
